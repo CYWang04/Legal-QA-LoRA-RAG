@@ -1,0 +1,22 @@
+cat > .gitignore << 'EOF'
+# 模型文件（太大）
+models/
+*.bin
+*.safetensors
+*.gguf
+
+# 数据文件
+data/
+*.jsonl
+*.pkl
+*.index
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 系统
+.DS_Store
+*.swp
+EOF

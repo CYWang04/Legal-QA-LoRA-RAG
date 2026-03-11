@@ -1,0 +1,7 @@
+model_name_or_path: /root/autodl-tmp/models/Qwen3-8B
+adapter_name_or_path: /root/autodl-tmp/saves/qwen3-8b-law-lora
+template: qwen3_nothink
+finetuning_type: lora
+export_dir: /root/autodl-tmp/models/Qwen3-8B-Law-Merged
+export_size: 2
+export_legacy_format: false

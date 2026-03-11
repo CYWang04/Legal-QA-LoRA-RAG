@@ -1,0 +1,12 @@
+cat > requirements.txt << 'EOF'
+torch>=2.6.0
+transformers>=4.51.0
+llamafactory
+FlagEmbedding
+faiss-gpu
+sentence-transformers
+jieba
+rouge-score
+numpy
+modelscope
+EOF
