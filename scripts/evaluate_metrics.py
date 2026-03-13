@@ -2,6 +2,7 @@ import json
 import jieba
 from collections import Counter
 import numpy as np
+from bert_score import score as bert_score
 
 with open("/root/autodl-tmp/data/inference_results.json", "r") as f:
     results = json.load(f)
@@ -65,5 +66,23 @@ for config_name, items in results.items():
     print(f"\n{config_name}:")
     print(f"  ROUGE-L: {avg_rouge:.1f}%")
     print(f"  BLEU-4:  {avg_bleu:.1f}%")
+
+print("\n" + "=" * 60)
+
+print("\n计算 BERTScore ...\n")
+
+for config_name, items in results.items():
+    refs = [item["reference"] for item in items]
+    hyps = [item["answer"] for item in items]
+    
+    P, R, F1 = bert_score(
+        hyps, refs,
+        lang="zh",
+        model_type="bert-base-chinese",
+        verbose=False
+    )
+    
+    print(f"{config_name}:")
+    print(f"  BERTScore F1: {F1.mean().item() * 100:.1f}%")
 
 print("\n" + "=" * 60)
