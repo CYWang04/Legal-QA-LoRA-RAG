@@ -19,3 +19,16 @@ config4_sft_rag:
   BLEU-4:  13.2%
 
 ============================================================
+
+计算 BERTScore ...
+
+config1_base:
+  BERTScore F1: 68.5%
+config2_sft:
+  BERTScore F1: 75.4%
+config3_rag:
+  BERTScore F1: 72.1%
+config4_sft_rag:
+  BERTScore F1: 75.7%
+
+============================================================
